@@ -1,8 +1,7 @@
 var express = require("express");
+var app = express();
 
 var PORT = process.env.PORT || 8080;
-
-var app = express();
 
 app.use(express.static("public"));
 
@@ -15,8 +14,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them. These are the pathways.
-var routes = require("./controllers/burgers_controller.js");
-
+var routes = require("./controllers/burgers_controller");
 app.use(routes);
 
 app.listen(PORT, function() {

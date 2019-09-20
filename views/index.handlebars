@@ -1,50 +1,47 @@
+<div class="container">
 
-{{!-- burgers that have been eaten --}}
+<div class="row">
+  <div class="col-xs-12 col-md-12 text-center">
 
-<div class="burgersEaten">
-<h1>Burgers</h1>
+<h1 class="header">EAT DA BURGER</h1>
+<img src="/public/assets/logo.jpg">
+<img src="/public/assets/shakeShack.png" >
+<h2 class="hopDoddy">BURGER TIME</h2>
 
-<h2 class="eaten">Burgers that have been devoured</h2>
+<img src="/.assets/background.jpg" class="card-img-top" alt="...">
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
- <li>
-   {{name}}
-   <button class="eatenBurger">EAT AGAIN</button>
- </li>
-    {{/if}}
-  {{/each}}
-</ul>
-</div>
-
-
-{{!-- Burgers that need to be devoured --}}
-
-<div class="burgersNotEaten">
-<h2 class="notEaten">New Burgers:</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        {{name}}
-        <button type="button" class="devouredBurger">DEVOUR</button>
-    </li>
-    {{/unless}}
-  {{/each}}
-</ul> 
-
-</div>
-
-{{!-- Submit Form --}}
-<h2>Eat Da Burgers</h2>
-
-  <div class="form-group">
-<form method="POST" action="/api/burgers">
-    <label for="burger_name">Add a burger you want to eat and click the submit button.</label>
-    <input type="text" id="burger_name" name="burger_name">
-    <button type="submit" id="addNewBurger" >Submit</button>
-</form>
+    <div class="form-group">
+      <form method="POST" action="/api/burgers">
+        <p>Add a burger you want to eat and click the submit button.<p>
+        <input type="text" id="burger_name" name="burger_name">
+        <button type="submit" id="addNewBurger">Submit</button>
+      </form>
+    </div>
   </div>
+</div>
 
+
+<div class="row">
+
+ <div class="col-1"></div>
+        <div class="col-4 menuDiv" id="menu">
+  <h2>CURRENT MENU:</h2>
+  {{#each burgers}}
+  {{#unless devoured}}
+  {{> menu devoured=true}}
+  {{/unless}}
+  {{/each}}
+</div>
+
+   <div class="col-1"></div>
+        <div class="col-4 menuDiv" id="menu">
+  <h2><strong>BURGERS DEVOURED:</strong></h2>
+
+  {{#each burgers}}
+  {{#if devoured}}
+  {{> menu devoured=false}}
+  {{/if}}
+  {{/each}}
+</div>
+
+</div>

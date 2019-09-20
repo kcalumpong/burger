@@ -15,6 +15,12 @@ router.get("/", function(req, res) {
   });
 });
 
+router.get('/api/burgers', function(req, res){
+  burger.all(function(data){
+    res.json(data)
+  });
+})
+
 router.post("/api/burgers", function(req, res) {
 
   console.log(req.body)
@@ -23,14 +29,13 @@ router.post("/api/burgers", function(req, res) {
     });
 });
 
-router.put("/api/burger/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
+  console.log(req.body)
   console.log("condition", condition);
 
   burger.update({
-    devoured: req.body.devoured
-  }, condition, function(result) {
+    devoured: req.body.devoured}, condition, function(result) {
     if (result.changedRows === 0) {
       // If no rows were changed, then the ID must not exist, so 404
       return res.status(404).end();
@@ -39,18 +44,5 @@ router.put("/api/burger/:id", function(req, res) {
     }
   });
 });
-
-// router.delete("/api/cats/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   cat.delete(condition, function(result) {
-//     if (result.affectedRows == 0) {
-//       // If no rows were changed, then the ID must not exist, so 404
-//       return res.status(404).end();
-//     } else {
-//       res.status(200).end();
-//     }
-//   });
-// });
 
 module.exports = router;

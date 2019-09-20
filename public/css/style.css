@@ -1,0 +1,19 @@
+#menu {
+    background-color: rgba(237, 243, 152, 0.8);
+    /* background-color: #61AE2B; */
+    /* background-image: url("https://cdn2.vectorstock.com/i/1000x1000/31/81/seamless-pattern-of-burger-with-yellow-background-vector-22703181.jpg"); */
+
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+h2, h3, h4, p {
+font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#addNewBurger {
+    font-family: 'Open Sans Condensed', sans-serif;
+    
+}
