@@ -1,0 +1,50 @@
+
+{{!-- burgers that have been eaten --}}
+
+<div class="burgersEaten">
+<h1>Burgers</h1>
+
+<h2 class="eaten">Burgers that have been devoured</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if devoured}}
+ <li>
+   {{name}}
+   <button class="eatenBurger">EAT AGAIN</button>
+ </li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+
+
+{{!-- Burgers that need to be devoured --}}
+
+<div class="burgersNotEaten">
+<h2 class="notEaten">New Burgers:</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+    <li>
+        {{name}}
+        <button type="button" class="devouredBurger">DEVOUR</button>
+    </li>
+    {{/unless}}
+  {{/each}}
+</ul> 
+
+</div>
+
+{{!-- Submit Form --}}
+<h2>Eat Da Burgers</h2>
+
+  <div class="form-group">
+<form method="POST" action="/api/burgers">
+    <label for="burger_name">Add a burger you want to eat and click the submit button.</label>
+    <input type="text" id="burger_name" name="burger_name">
+    <button type="submit" id="addNewBurger" >Submit</button>
+</form>
+  </div>
+
