@@ -1,4 +1,5 @@
 $(document).on("click", ".eatButton", function () {
+    console.log("clicked")
     var burgerId = $(this).data("id");
     var eaten = $(this).data("eaten");
     console.log(eaten)
@@ -14,30 +15,6 @@ $(document).on("click", ".eatButton", function () {
         location.reload();
     })
 })
-
-// $(function() {
-//     $(".eatButton").on("click", function(event) {
-//       var id = $(this).data("id");
-//       console.log(id)
-//       var eaten = $(this).data("eaten");
-//       console.log(eaten)
-  
-//       var newEaten = {
-//         devoured: eaten
-//       };
-  
-//       $.ajax("/api/burgers/" + id, {
-//         type: "PUT",
-//         data: newEaten
-//       }).then(
-//         function() {
-    
-//           location.reload();
-//         }
-//       );
-//     });
-  
-
 
 $(document).on("click", "#addNewBurger", function(event) {
     event.preventDefault();
