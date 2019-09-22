@@ -21,7 +21,7 @@
   <div class="row burger-row">
     <div class="col-1"></div>
     <div class="col-4 menuDiv" id="menu">
-      <h2 class="current-menu"><strong>CURRENT MENU:</strong></h2>
+      <h2 class="current-menu">CURRENT MENU:</h2>
       {{#each burgers}}
       {{#unless devoured}}
       {{> menu devoured=true}}
@@ -31,7 +31,7 @@
 
     <div class="col-1"></div>
     <div class="col-4 menuDiv" id="menu">
-      <h2 class="current-menu"><strong>DEVOURED:</strong></h2>
+      <h2 class="current-menu">DEVOURED:</h2>
 
       {{#each burgers}}
       {{#if devoured}}
