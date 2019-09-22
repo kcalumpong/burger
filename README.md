@@ -1,8 +1,12 @@
-# EAT DA BURGER :hamburger:
+# WELCOME TO EAT DA BURGER :hamburger:
 
-Welcome to "Eat Da Burger", the only application that lets you add and eat your favorite burgers. 
+EAT DA BURGER, the only application that lets you add and eat your favorite burgers. 
 
-Simply enter in the text box the type of burger you would like and hit "Submit". It will automatically be added to the MENU section. Click "DEVOUR!" on the burger you would like to eat and it will move to the DEVOURED section. If you would like to try it again click "Try Again!"
+## How it works:
+
+* Enter in the type of burger you would like and hit "Submit". It will automatically be added to the MENU section. 
+* Click "DEVOUR!" on the burger you would like to eat. It will automatically move to the DEVOURED section. 
+* If you would like to try it again click "Try Again!"
 
 ## How to Run Locally:
 
