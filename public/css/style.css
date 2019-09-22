@@ -63,3 +63,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     align-content: right;
     margin-right: 10px;
 }
+
+.burgers {
+    text-align: center;
+}
